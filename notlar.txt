@@ -1,0 +1,141 @@
+1-5:sql de tablo oluşturma
+URUNLER,STOKLAR,PERSONELLER,NOTLAR,MUSTERILER,GIDERLER,FIRMALAR,FATURADETAY,FATURABILGI,BANKALAR
+İLLER VE İLÇELER sql server türkiye iller ve ilçeler ahmet cansever
+Execute
+6-8:devexpress tanıtım
+9:formlar ve tablolar dizayn
+10-11:menu oluşturma 
+button ismi değiştirmek içim propertiden (name) BtnUrunler vb
+Sıze -startposition centerscreen
+button boyutu 11
+12:project addwindowsform 
+ribboncontrol(düğmeleri gizle)
+FrmUrunler
+grid kontrol,groupControl(URUNADI,MARKA,MODEL,YIL,ADET,ALISFIYAT,SATISFIYAT,DETAY) VE kaydet butonu
+12:urunler butonu 
+form1 e MDI eklendi form ürünlerindeki groupcontrol düzenlendi ve buttonlara izim verildi(btn..)
+12:sqll connection class yapıldı 
+using System.Data.SqlClient;
+15:urunler listesinin bağlantı kodları yazıldı
+16:kaydet butonu komutları
+17:sil butonu yapıldı
+18:farenin gösterdiği yerin bilgilerini gösterme 
+19:güncelleme butonu
+20:Musteriler modulune giriş
+21:tam ekran tasarımı
+22:Musteri listesi görüntüleme
+23:musteriler formu textbox isimleri,iller ve ilçeler ayarlandı
+24:kaydet butonu
+25:tıklanan musterinin bilgilerini gösterme ve silme butonu
+(ödev silme işlemini yapınca gerçekten silmek istiyormusunuz diye sordurt)
+26:güncelle 
+27:FİRMALAR formu tasarımı  FRM FİRMMALAR (groupbox rengini değiştir)
+28:FİRMALAR formu extratabpage tasarımı ve sql de kodlar tablosu
+29:FİRMALAR bilgilerini gösterme kodu
+30:grid control rundesingrer FocusedRowChanged (tıkladığımız şeyin bilgisini gösterme)
+31;kaydet butonu
+32:selectedtabpage ve temizle metodu
+(temizle metodu ve iller ve ilçeler gözükmüyor)
+temizle metodunu heryerde kullan)
+33:özel kodu rchboxda gösterme  ve 32 nin kodları 
+34:silme butonu
+35:güncelleme
+36:PERSONEL modulü
+37:personel listesini gösterme
+38:kaydet butonu
+39:temizle metodu ve tıklanan personeli gösterme
+40:silme butonu
+41:güncelleme
+42:rehber formu musteri bilgilerini göstermne
+43:firma bilgilerini göstermne
+44:grid control ü renklendirme
+45:rehberin musteriler ve firmalardaki maile çift tiklayarak gösterme
+46:mail Gönderme (BAŞARISIZ)
+47:giderler formu tasarım ve giderlere tıklandığında gösterme
+48:firmalarda  sekme resimlendirme ve gider listesi
+49:gider listesine gider ekleme
+50:verileri gösterme ve temzile metdu
+51:silme
+52:güncelleme
+53:banka firma ilişkisi
+Bire Bir bir insanaın 1 tc si olması gibi
+Bire Çok bir şehirde doğan birden çok insanın olması gibi
+Çoka Çok dersler ve öğrenciler gibi herhangibi dersi birden çok öürenci alabiliyor
+Birincil anahtar seçildiği satırı diğer satırlardan ayıran benzersiz satır
+truncate table tbl_BANKALAR // tablonun içindeki veriler sıfırlar
+54:bankalar formu tasarım
+55:bankalara devam
+56:inner join kullanma (tabloları birleştirmek için)
+2 tablonun ortak alanlarına göre işlem yapılır 
+57:prosedür uzun sql komutlarını kısaltıp sql tabanında depolayıp sadece c# tabanında onun ismini çağıran metod
+57:Bankalar modulü için prosedür kullanımı 
+58:Bankalar  kaydet butonu
+59:look up edit kullanımı   BANKALARIN KAYDETME BUTONU
+60:look up edit kullanımı2 
+61:Seçilen firmaya göre ıd getirme
+62:Bankalar Modülü, Ders 62- Prosedür Güncelleme ve Verileri Araçlara Taşıma
+63: Banka Bilgisi Silme ve Temizleme
+64:GÜNCELLE BUTONU
+65:Fatura Formu Tasarımı
+66:Fatura Formu Tasarımı2
+67:Faturaları listeleme
+68:kaydetme ------------
+
+NERDEYİM
+127.
+
+HATALAR
+
+BANKALAR GÜNCELLE , KAYDET BUTONU 
+MAİL GÖNDERME FRM_MAIL
+57.video protokül 
+76.bölüm fatura ürüngüncellemede tutar değiştirmiyor
+85.bölüm veri girişi 
+99.Müşteri Hareketleri Prosedürü Oluşturma ve 100.bölüm
+85-91 veri girişi
+FATURA ÜRÜN DÜZENLEME GÜNCELLEME BUTONU
+104/5.b reportviewer
+107.v chartcontrol
+113.bölüm ayarlar formu çok büyük çıkıyor
+
+NOTLAR
+
+join
+---------
+Inner Join
+Left Outer
+Right Outher
+full 
+gridView1 //lookUpEdit1.Text = dr["FIRMAID"].ToString();
+bgl.baglanti().Close(); komutu ne işe yarar niçin kullanıyoruz
+tabindex
+accept ve cancel buttonları Order By Asc
+FATURABİLGİ DE HATA ÇIKARSA FATURA ID Yİ KONTROL ET 
+76.
+formlar arası ıd listelemenin nasıl yapıldığına bak
+DDL(Veri Tanımlama Dili)
+Create(oluşturma)
+alter(Düzenleme)
+Drop(Silme)
+--------
+DML(Veri Yapılandırma Dili) Count,Avg,Sum
+Select
+Insert
+Delete
+Update
+AuthoSizeMode GrowAndShrink (kenardan tutp sayfayı çekmeyi önler)
+maximizze/minimize box false
+readonly True
+
+--Count, Avg ,Sum
+--Select Count(*) From TBL_FIRMALAR where IL ='İstanbul' or IL = 'Adana'
+--Select avg (satısfıyat) from TBL_URUNLER
+--Select Sum(SATISFIYAT) From TBL_URUNLER
+--Select (sum(SATISFIYAT*ADET))-(sum(ALISFIYAT*ADET)) from TBL_URUNLER
+
+Select IL,COUNT(*) as 'sayı' From TBL_FIRMALAR Group By IL
+Select URUNADI,Sum(Adet) As 'Miktar' From TBL_URUNLER Group By URUNADI
+select URUNADI,ADET from TBL_URUNLER where URUNADI='ceviz kıracağı'
+
+
+
